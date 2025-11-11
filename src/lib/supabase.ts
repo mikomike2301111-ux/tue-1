@@ -12,18 +12,23 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export interface Product {
   id: string;
   name: string;
-  category: 'men' | 'women' | 'unisex';
-  subcategory: string | null;
   description: string | null;
   price: number;
-  colors: string[];
-  sizes: string[];
   image_url: string | null;
   featured: boolean;
-  in_stock: boolean;
+  discount_label: string;
   sort_order: number;
+  in_stock: boolean;
   created_at: string;
   updated_at: string;
+}
+
+export interface HeroSlide {
+  id: string;
+  image_url: string;
+  sort_order: number;
+  active: boolean;
+  created_at: string;
 }
 
 export interface Category {
